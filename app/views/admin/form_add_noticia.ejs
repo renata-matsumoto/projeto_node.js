@@ -1,0 +1,34 @@
+
+<%- include('../common/header')  %>
+<!-- estamos recuperando a instrução de um outro arquivo -->
+
+<%- include('../common/main')  %>
+     
+     <main>
+         <div class="bg-light p-5 mb-4">
+            <div class="container text-center">
+                <h1>Nova Noticia</h1>
+            </div>
+
+            <div class="container">
+                <form action="">
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" placeholder="Titulo" name="titulo" autocomplete="off" required>    
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Conteúdo</label>
+                        <textarea name="conteudo" id="c onteudo" cols="30" rows="10" class="form-control" required></textarea>  
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                        Criar
+                    </button>
+                </form>
+
+            </div>
+         </div>
+       
+     </main>
+
+     <%- include('../common/footer')  %>

@@ -1,26 +1,49 @@
-<!DOCTYPE html>
-    <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Site de Notícias</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
+<%- include('../common/header')  %>
+   <!-- estamos recuperando a instrução de um outro arquivo -->
 
-    <body>
-        <a href="/">Home</a>
-        <a href="/noticias">Notícias</a>
+   <%- include('../common/main')  %>
+        
+   <main class="mb-4">
+    <div class="bg-light p-5 mb-4">
+        <div class="container text-center">
+            <h1>Seja Bem Vindo</h1>
+            <p class="lead">
+                Fique por dentro das ultimas notícias no mundo da tecnologia
+            </p>
+        </div>
+    </div>
 
-        <h1>Site de Notícias</h1>
-        <h2>Últimas Notícias</h2>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            
+            <% noticias.forEach(noticia => { %>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= noticia.titulo %>
+                            </h5>
+                            <p class="card-text">
+                                <%= noticia.conteudo.substring(0, 50) %>
+                                ...
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <%= noticia.data_criacao.toLocaleString('pt-BR').split(' ').join(' às ') %>
+                                </small>
+                            </p>
+                            <a href="/noticia?id=<%= noticia.id_noticia %>" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                
+            <% } ) %>
 
-        <p>
-            Fique por dentro das últimas notícias do mundo da tecnologia!
-        </p>
 
-        <script src="./js/script.js"></script>
-    </body>
+        </div>
+    </div>
+  
+</main>
 
-    </html>
+<%- include('../common/footer') %>

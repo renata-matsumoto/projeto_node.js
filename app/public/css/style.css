@@ -1,2 +1,9 @@
 /* Estilos por Cel.Lep Tech */
 
+/* Seletor ID */
+
+#conteudo{
+    /* desabilitar o redimensionamento da área de texto */
+    resize: none;
+
+}
