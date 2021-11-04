@@ -103,7 +103,7 @@ app.post('/admin/autenticar', function(req, res){
 
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor rodando com express')
     console.log('Pressione CTRL + C para encerrar')
 })
